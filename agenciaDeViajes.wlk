@@ -73,6 +73,18 @@ class Coordinador{
 
 }
 
+object guia{
+
+}
+
+object asistenteLogistico{
+
+}
+
+object acompanante{
+    
+}
+
 class BeneficioEspecial{
 
     const tipo

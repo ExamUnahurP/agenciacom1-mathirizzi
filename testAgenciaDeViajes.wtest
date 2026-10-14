@@ -6,24 +6,40 @@ describe "Tests agenciacom1"{
 
     const accesoZoom = new BeneficioEspecial(tipo = "Acceso a salas VIP", costo = 200, estaVigente = true)
 
-    const roberto 
+    const roberto = new Coordinador(cantidadViajesRealizados = 21, estaMotivado = true, experiencia = 10, rol = guia)
 
-    const packNacionalSinBeneficios = new PackNacional(duracion = 7, precioBase = 500, provinciaDestino = "Mendoza")
+    const eduardo = new Coordinador(cantidadViajesRealizados = 30, estaMotivado = true, experiencia = 2, rol = asistenteLogistico)
 
-    const packNacionalConBeneficios = new PackNacional(duracion = 7, precioBase = 500, provinciaDestino = "Mendoza")
+    const jorge = new Coordinador(cantidadViajesRealizados = 25, estaMotivado = false, experiencia = 5, rol = acompanante)
 
-    const packInternacionalSinBeneficios = new PackInternacional(duracion = 7, precioBase = 500, paisDestino = "Brasil", cantidadEscalas = 0, esLugarDeInteres = true)
+    const packNacionalSinBeneficios = new PackNacional(duracion = 7, precioBase = 500, provinciaDestino = "Mendoza", coordinador = roberto)
+
+    const packNacionalConBeneficios = new PackNacional(duracion = 7, precioBase = 500, provinciaDestino = "Mendoza", coordinador = roberto, beneficiosVigentes = [trasladoHotel, accesoZoom])
+
+    const packInternacionalSinBeneficios = new PackInternacional(duracion = 7, precioBase = 500, paisDestino = "Brasil", cantidadEscalas = 0, esLugarDeInteres = true, coordinador = roberto)
 
     test "pack nacional sin beneficios"{
     assert.equals(500, packNacionalSinBeneficios.valorFinal())
     }
 
-    test "pack nacional con beneficios"{
+    test "pack nacional con dos beneficios"{
     assert.equals(800, packNacionalConBeneficios.valorFinal())
     }
 
     test "pack internacional sin beneficios"{
     assert.equals(600, packInternacionalSinBeneficios.valorFinal())
+    }
+
+    test "coordinador guia esta altamente calificado"{
+        assert.that(roberto.estaAltamenteCalificado())
+    }
+
+    test "coordinador asistente logistico no esta altamente calificado"{
+        assert.notThat(eduardo.estaAltamenteCalificado())
+    }
+
+    test "coordinador acompanante esta altamente calificado"{
+        assert.that(jorge.estaAltamenteCalificado())
     }
 
 
