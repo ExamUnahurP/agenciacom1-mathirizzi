@@ -18,15 +18,15 @@ describe "Tests agenciacom1"{
 
     const packInternacionalSinBeneficios = new PackInternacional(duracion = 27, precioBase = 500, paisDestino = "Brasil", cantidadEscalas = 0, esLugarDeInteres = false, coordinador = roberto)
 
-    test "vvalor final del pack nacional sin beneficios"{
+    test "validacion del valor final del pack nacional sin beneficios"{
     assert.equals(500, packNacionalSinBeneficios.valorFinal())
     }
 
-    test "valor final del pack nacional con dos beneficios"{
+    test "validacion del valor final del pack nacional con dos beneficios"{
     assert.equals(800, packNacionalConBeneficios.valorFinal())
     }
 
-    test "pack internacional sin beneficios"{
+    test "validacion del valor final del pack internacional sin beneficios"{
     assert.equals(600, packInternacionalSinBeneficios.valorFinal())
     }
 
@@ -50,7 +50,6 @@ describe "Tests agenciacom1"{
         assert.notThat(packInternacionalSinBeneficios.esPremium())
     }
 
-    test ""
+    }
 
 
-}
