@@ -2,11 +2,24 @@ describe "Tests agenciacom1"{
 
     const trasladoHotel = new BeneficioEspecial(tipo = "Traslados privados", costo = 100, estaVigente = true)
 
-    const accesoZoom = new BeneficioEspecial(tipo = "Acceso a salas VIP", costo = 200, )
+    const accesoZoom = new BeneficioEspecial(tipo = "Acceso a salas VIP", costo = 200, estaVigente = true)
 
     const packNacionalSinBeneficios = new PackNacional(duracion = 7, precioBase = 500)
 
-    const packNacionalConBeneficios = new PackNacional(duracion = 7, precioBase = 500)
+    const packNacionalConBeneficios = new PackNacional(duracion = 7, precioBase = 500, beneficiosVigentes = [trasladoHotel, accesoZoom])
 
     const packInternacionalSinBeneficios = new PackInternacional(duracion = 7, precioBase = 500)
+
+    test "pack nacional sin beneficios"{
+    assert.equals(500, packNacionalSinBeneficios.valorFinal())
+    }
+
+    test "pack nacional con beneficios"{
+    assert.equals(800, packNacionalConBeneficios.valorFinal())
+    }
+
+    test "pack internacional sin beneficios"{
+    assert.equals(600, packInternacionalSinBeneficios.valorFinal())
+    }
+
 }

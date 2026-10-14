@@ -54,7 +54,7 @@ class Coordinador{
 
 }
 
-class beneficioEspecial{
+class BeneficioEspecial{
 
     const tipo
 
