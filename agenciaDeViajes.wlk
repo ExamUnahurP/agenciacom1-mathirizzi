@@ -49,8 +49,12 @@ class Coordinador{
     var rol
 
     method cambiarRol(nuevoRol) {
-        
+        if(nuevoRol == guia or nuevoRol == asistenteLogistico or nuevoRol == acompanante){
+            rol = nuevoRol
+        } else 
     }
+
+    method estaAltamenteCalificado() = (cantidadViajesRealizados > 20) and if(rol == guia)
 
 }
 
