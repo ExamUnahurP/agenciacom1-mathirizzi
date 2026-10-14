@@ -69,7 +69,7 @@ class Coordinador{
         } else raise.error("El rol es incorrecto")
     }
 
-    method estaAltamenteCalificado() = (cantidadViajesRealizados > 20) and if(rol == guia) estaMotivado == true else if(rol == asistenteLogistico) experiencia >= 3
+    method estaAltamenteCalificado() = (cantidadViajesRealizados > 20) and if(rol == guia) estaMotivado == true else if(rol == asistenteLogistico) experiencia >= 3 else if(rol == acompanante) cantidadViajesRealizados > 20
 
 }
 
@@ -82,7 +82,7 @@ object asistenteLogistico{
 }
 
 object acompanante{
-    
+
 }
 
 class BeneficioEspecial{

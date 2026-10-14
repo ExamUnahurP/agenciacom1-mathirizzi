@@ -12,17 +12,17 @@ describe "Tests agenciacom1"{
 
     const jorge = new Coordinador(cantidadViajesRealizados = 25, estaMotivado = false, experiencia = 5, rol = acompanante)
 
-    const packNacionalSinBeneficios = new PackNacional(duracion = 7, precioBase = 500, provinciaDestino = "Mendoza", coordinador = roberto)
+    const packNacionalSinBeneficios = new PackNacional(duracion = 15, precioBase = 500, provinciaDestino = "Mendoza", coordinador = roberto)
 
     const packNacionalConBeneficios = new PackNacional(duracion = 7, precioBase = 500, provinciaDestino = "Mendoza", coordinador = roberto, beneficiosVigentes = [trasladoHotel, accesoZoom])
 
-    const packInternacionalSinBeneficios = new PackInternacional(duracion = 7, precioBase = 500, paisDestino = "Brasil", cantidadEscalas = 0, esLugarDeInteres = true, coordinador = roberto)
+    const packInternacionalSinBeneficios = new PackInternacional(duracion = 27, precioBase = 500, paisDestino = "Brasil", cantidadEscalas = 0, esLugarDeInteres = false, coordinador = roberto)
 
-    test "pack nacional sin beneficios"{
+    test "vvalor final del pack nacional sin beneficios"{
     assert.equals(500, packNacionalSinBeneficios.valorFinal())
     }
 
-    test "pack nacional con dos beneficios"{
+    test "valor final del pack nacional con dos beneficios"{
     assert.equals(800, packNacionalConBeneficios.valorFinal())
     }
 
@@ -41,6 +41,16 @@ describe "Tests agenciacom1"{
     test "coordinador acompanante esta altamente calificado"{
         assert.that(jorge.estaAltamenteCalificado())
     }
+
+    test "el pack nacional sin beneficios es premium"{
+        assert.that(packNacionalSinBeneficios.esPremium())
+    }
+
+    test "el pack internacional sin beneficios no es premium"{
+        assert.notThat(packInternacionalSinBeneficios.esPremium())
+    }
+
+    test ""
 
 
 }
