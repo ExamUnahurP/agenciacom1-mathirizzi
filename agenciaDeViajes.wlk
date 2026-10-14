@@ -31,7 +31,12 @@ override method esPremium() = duracion > 10 and coordinador.estaAltamenteCalific
 }
 
 class PackProvincial inherits PackNacional{
-    
+
+    const ciudadesAVisitar
+
+    override method esPremium() = actividadesIncluidas.size() >= 4 and ciudadesAVisitar > 5 and beneficiosVigentes.size() >= 3
+
+    override method valorFinal() = if(self.esPremium()) super() * 1.05 else super()
 }
 
 class PackInternacional inherits Pack{
@@ -78,4 +83,4 @@ class BeneficioEspecial{
 
     var estaVigente
 
-} 
+}

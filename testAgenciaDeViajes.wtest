@@ -1,8 +1,12 @@
+import agenciaDeViajes.*
+
 describe "Tests agenciacom1"{
 
     const trasladoHotel = new BeneficioEspecial(tipo = "Traslados privados", costo = 100, estaVigente = true)
 
     const accesoZoom = new BeneficioEspecial(tipo = "Acceso a salas VIP", costo = 200, estaVigente = true)
+
+    const roberto 
 
     const packNacionalSinBeneficios = new PackNacional(duracion = 7, precioBase = 500, provinciaDestino = "Mendoza")
 
