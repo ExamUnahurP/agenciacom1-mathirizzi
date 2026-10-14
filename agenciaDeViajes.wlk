@@ -4,15 +4,17 @@ const duracion
 
 const precioBase
 
-// beneficios especiales
+const beneficiosVigentes = []
 
 // coordinador
 
-method valorFinal() = precioBase + beneficios
+method totalCostosBeneficiosVigentes() = beneficiosVigentes.sum({b => b.costo()})
+
+method valorFinal() = precioBase + self.totalCostosBeneficiosVigentes()
 
 }
 
-class PackNacionales inherits Pack{
+class PackNacional inherits Pack{
 
 const provinciaDestino
 
@@ -20,13 +22,15 @@ const actividadesIncluidas = []
 
 }
 
-class PackInternacionales inherits Pack{
+class PackInternacional inherits Pack{
 
 const paisDestino
 
 const cantidadEscalas
 
 method esLugarDeInteres()
+
+override method valorFinal() = super() * 1.20
 
 }
 
