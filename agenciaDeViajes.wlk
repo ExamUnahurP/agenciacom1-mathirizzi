@@ -16,6 +16,8 @@ method totalCostosBeneficiosVigentes() = beneficiosVigentes.sum({b => b.costo()}
 
 method valorFinal() = precioBase + self.totalCostosBeneficiosVigentes()
 
+method esPremium()
+
 }
 
 class PackNacional inherits Pack{
@@ -23,6 +25,8 @@ class PackNacional inherits Pack{
 const provinciaDestino
 
 const actividadesIncluidas = []
+
+override method esPremium()
 
 }
 
@@ -51,10 +55,10 @@ class Coordinador{
     method cambiarRol(nuevoRol) {
         if(nuevoRol == guia or nuevoRol == asistenteLogistico or nuevoRol == acompanante){
             rol = nuevoRol
-        } else 
+        } else raise.error("El rol es incorrecto")
     }
 
-    method estaAltamenteCalificado() = (cantidadViajesRealizados > 20) and if(rol == guia)
+    method estaAltamenteCalificado() = (cantidadViajesRealizados > 20) and if(rol == guia) estaMotivado == true else if(rol == asistenteLogistico) experiencia >= 3
 
 }
 
