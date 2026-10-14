@@ -6,6 +6,10 @@ const precioBase
 
 const beneficiosVigentes = []
 
+method agregarBeneficio(beneficio) {
+    beneficiosVigentes.add(beneficio)
+}
+
 // coordinador
 
 method totalCostosBeneficiosVigentes() = beneficiosVigentes.sum({b => b.costo()})
@@ -50,7 +54,7 @@ class Coordinador{
 
 }
 
-class beneficiosEspeciales{
+class beneficioEspecial{
 
     const tipo
 
@@ -58,5 +62,6 @@ class beneficiosEspeciales{
 
     method costo() = costo
 
-    method estaVigente()
-}
+    var estaVigente
+
+} 
