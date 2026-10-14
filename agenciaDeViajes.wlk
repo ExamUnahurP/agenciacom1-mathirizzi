@@ -32,7 +32,7 @@ const paisDestino
 
 const cantidadEscalas
 
-method esLugarDeInteres()
+const esLugarDeInteres
 
 override method valorFinal() = super() * 1.20
 
@@ -42,7 +42,7 @@ class Coordinador{
 
     var cantidadViajesRealizados
 
-    method estaMotivado()
+    var estaMotivado
 
     var experiencia
 
