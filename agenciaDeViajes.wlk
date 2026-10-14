@@ -10,7 +10,7 @@ method agregarBeneficio(beneficio) {
     beneficiosVigentes.add(beneficio)
 }
 
-// coordinador
+const coordinador
 
 method totalCostosBeneficiosVigentes() = beneficiosVigentes.sum({b => b.costo()})
 
@@ -26,8 +26,12 @@ const provinciaDestino
 
 const actividadesIncluidas = []
 
-override method esPremium()
+override method esPremium() = duracion > 10 and coordinador.estaAltamenteCalificado()
 
+}
+
+class PackProvincial inherits PackNacional{
+    
 }
 
 class PackInternacional inherits Pack{
@@ -39,6 +43,8 @@ const cantidadEscalas
 const esLugarDeInteres
 
 override method valorFinal() = super() * 1.20
+
+override method esPremium() = esLugarDeInteres == true and duracion > 20 and cantidadEscalas == 0
 
 }
 
